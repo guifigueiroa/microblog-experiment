@@ -50,15 +50,6 @@ class UsersController < ApplicationController
   
 
   private
-    # Confirms a logged-in user.
-    def logged_in_user
-      unless logged_in?
-        store_location
-        flash[:danger] = "Por favor faça login"
-        redirect_to login_url
-      end
-    end
-
     # Before filters
     
     # Confirms correct user

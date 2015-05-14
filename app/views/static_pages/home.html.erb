@@ -1,12 +1,26 @@
-<div class="center jumbotron">
-  <h1>Bem vindo ao meu microblog</h1>
-
-  <h2>
-    Este e um microblog experimental para desenvolver minhas habilidades no Ruby on Rails o/
-  </h2>
-
-  <%= link_to "Se inscreva!", signup_path, class: "btn btn-lg btn-primary" %>
-</div>
-
-<%= link_to image_tag("rails.png", alt: "Rails logo"),
-            'http://rubyonrails.org/' %>
+<% if logged_in? %>
+  <div class="row">
+    <aside class="col-md-4">
+      <section class="user_info">
+        <%= render 'shared/user_info' %>
+      </section>
+      <section class="micropost_form">
+        <%= render 'shared/micropost_form' %>
+      </section>
+    </aside>
+    <div class="col-md-8">
+      <h3>Feed de microposts</h3>
+      <%= render 'shared/feed' %>
+    </div>
+  </div>
+<% else %>
+	<div class="center jumbotron">
+	  <h1>Bem vindo ao meu microblog</h1>
+	  <h2>
+	    Este e um microblog experimental para desenvolver minhas habilidades no Ruby on Rails o/
+	  </h2>
+	  <%= link_to "Se inscreva!", signup_path, class: "btn btn-lg btn-primary" %>
+	</div>
+	<%= link_to image_tag("rails.png", alt: "Rails logo"),
+	            'http://rubyonrails.org/' %>
+<%end%>

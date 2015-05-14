@@ -15,6 +15,7 @@ $gray-medium-light: #eaeaea;
 
 body {
   padding-top: 60px;
+  background-color: $gray-lighter;
 }
 
 section {
@@ -73,6 +74,18 @@ p {
   font-weight: bold;
   &:hover {
     color: white;
+    text-decoration: none;
+  }
+}
+
+.navbar {
+    background-color: green;
+}
+
+.navbar .navbar-nav > li > a {
+   color: white; /*Change active text color here*/
+   &:hover {
+    color: $gray-medium-light;
     text-decoration: none;
   }
 }
